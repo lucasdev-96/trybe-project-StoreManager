@@ -7,13 +7,13 @@ const salesControllers = require('./controllers/salesControllers');
 const { validateQuantitySales } = require('./middlewares/salesMiddlewares');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3000 || process.env.PORT;
 
 app.use(bodyParser.json());
 
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
-  response.send();
+  response.send('oi');
 });
 
 // Crud products;
